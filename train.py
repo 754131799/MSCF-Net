@@ -24,7 +24,7 @@ class DiceLoss(nn.Module):
 
 
 class WeightedDiceCELoss(nn.Module):
-    def __init__(self, weight_dice=0.5, weight_ce=0.5):
+    def __init__(self, weight_dice=0.7, weight_ce=0.3):
         super().__init__()
         self.weight_dice = weight_dice
         self.weight_ce = weight_ce
