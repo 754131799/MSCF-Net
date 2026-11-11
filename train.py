@@ -89,7 +89,7 @@ def train_model(data_dir, epochs=100, batch_size=4, lr=0.0001, device="cuda"):
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=4, pin_memory=True)
 
     model = MSCF_Net(in_chans=1, out_chans=1).to(device)
-    criterion = WeightedDiceCELoss(weight_dice=0.5, weight_ce=0.5)
+    criterion = WeightedDiceCELoss(weight_dice=0.7, weight_ce=0.3)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
     for epoch in range(epochs):
